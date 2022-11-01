@@ -23,7 +23,7 @@
               <input type="password" class="form-control" style="background-color: #76c7e5; color: white" name="password" id="password" placeholder="#" required>
                 <label for="password" style="color: white; font-style: italic;">Contraseña</label>
             </div>
-            <input type="submit" class="btn btn-primary" value="Iniciar Sesión" name="submit">
+            <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Iniciar Sesión" name="submit">
           </form>
         </div>
       </div>
