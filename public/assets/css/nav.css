@@ -27,6 +27,7 @@ body
     background: #76c7e5;
     transition: width 0.5s;
     overflow-x: hidden;
+    z-index: 999;
 }
 
 .navigation.active
@@ -186,4 +187,60 @@ body
 .toggle.active ion-icon.open
 {
     display: none;
+}
+
+#f-button
+{
+    position: relative;
+    display: flex;
+    background: #3bb9e7;
+    color: #fff;
+    border-radius: 15px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#f-button:hover
+{
+    background: #ff4d89;
+    color: #fff;
+}
+
+#f-button .f-icon
+{
+    position: relative;
+    display: block;
+    min-width: 50px;
+    height: 50px;
+    line-height: 70px;
+    text-align: center;
+}
+
+#f-button .f-icon ion-icon
+{
+    font-size: 1.5em;
+}
+
+#f-button .f-title
+{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    line-height: 50px;
+    white-space: normal;
+}
+
+#btn-create{
+    background: #3bb9e7;
+    color: #fff;
+    font-size: 1.25em;
+}
+
+#btn-delete{
+    background: #ff4d89;
+    color: #fff;
+    font-size: 1.25em;
 }

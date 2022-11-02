@@ -48,4 +48,17 @@ class LoginRequest extends FormRequest
 
         return !$factory->make(['username' => $value], ['username' => 'email'])->fails();
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages()
+    {
+        return [
+            'username.required' => 'El campo nombre de usuario / correo es obligatorio.',
+            'password.required' => 'El campo contraseña es obligatorio.',
+        ];
+    }
 }

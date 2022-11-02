@@ -3,7 +3,7 @@
     <li class='list @if(Request::is('home')) active @endif'>
       <b></b>
       <b></b>
-      <a href="">
+      <a href="/home">
         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
         <span class="title">Home</span>
       </a>
@@ -32,10 +32,10 @@
         <span class="title">Citas</span>
       </a>
     </li>
-    <li class='list @if(Request::is('especialidades')) active @endif'>
+    <li class='list @if(Request::is('speciality')) active @endif'>
       <b></b>
       <b></b>
-      <a href="">
+      <a href="/speciality">
         <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
         <span class="title">Especialidades</span>
       </a>

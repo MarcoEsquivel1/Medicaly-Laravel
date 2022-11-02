@@ -4,6 +4,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SpecialityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,11 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
+
+Route::get('/speciality', [SpecialityController::class, 'index']);
+
+Route::post('/speciality', [SpecialityController::class, 'store']);
+
+Route::put('/speciality', [SpecialityController::class, 'edit']);
+
+Route::delete('/speciality', [SpecialityController::class, 'destroy']);
