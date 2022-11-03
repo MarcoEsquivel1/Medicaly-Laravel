@@ -49,11 +49,11 @@ class DoctorController extends Controller
             'speciality_id.required' => 'La especialidad es obligatoria',
             'speciality_id.integer' => 'La especialidad debe ser un número',
             'speciality_id.exists' => 'La especialidad no existe',
-            'start_time.required' => 'La hora de inicio es obligatoria',
-            'start_time.date_format' => 'La hora de inicio debe tener el formato correcto',
-            'end_time.required' => 'La hora de fin es obligatoria',
-            'end_time.date_format' => 'La hora de fin debe tener el formato correcto',
-            'end_time.after' => 'La hora de fin debe ser posterior a la hora de inicio',
+            'start_time.required' => 'La hora de entrada es obligatoria',
+            'start_time.date_format' => 'La hora de entrada debe tener el formato correcto',
+            'end_time.required' => 'La hora de salida es obligatoria',
+            'end_time.date_format' => 'La hora de salida debe tener el formato correcto',
+            'end_time.after' => 'La hora de salida debe ser posterior a la hora de entrada',
         ]);
 
         $doctor = Doctor::find($request->id);

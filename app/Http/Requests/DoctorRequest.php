@@ -50,11 +50,11 @@ class DoctorRequest extends FormRequest
             'speciality_id.required' => 'La especialidad es requerida',
             'speciality_id.integer' => 'La especialidad debe ser un número entero',
             'speciality_id.exists' => 'La especialidad no existe',
-            'start_time.required' => 'La hora de inicio es requerida',
-            'start_time.date_format' => 'La hora de inicio debe tener el formato HH:mm',
-            'end_time.required' => 'La hora de fin es requerida',
-            'end_time.date_format' => 'La hora de fin debe tener el formato HH:mm',
-            'end_time.after' => 'La hora de fin debe ser mayor a la hora de inicio',
+            'start_time.required' => 'La hora de entrada es requerida',
+            'start_time.date_format' => 'La hora de entrada debe tener el formato HH:mm',
+            'end_time.required' => 'La hora de salida es requerida',
+            'end_time.date_format' => 'La hora de salida debe tener el formato HH:mm',
+            'end_time.after' => 'La hora de salida debe ser mayor a la hora de entrada',
         ];
     }
 }

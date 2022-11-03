@@ -83,3 +83,44 @@ $('#doctorDeleteModal').on('show.bs.modal', function (event) {
     modal.find('.modal-body #id').val(id)
     modal.find('#modal-message').text('¿Está seguro que desea eliminar el doctor ' + name + ' ' + surname + '?')
 })
+
+/* Edit appointment modal */
+$('#appointmentEditModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var id = button.data('id') // Extract info from data-* attributes
+    var patient_id = button.data('patient_id')
+    var patient_name = button.data('patient_name')
+    var patient_surname = button.data('patient_surname')
+    var doctor_id = button.data('doctor_id')
+    var doctor_name = button.data('doctor_name')
+    var doctor_surname = button.data('doctor_surname')
+    var date = button.data('date')
+    var time = button.data('time')
+    var modal = $(this)
+    modal.find('.modal-body #id').val(id)
+    modal.find('.modal-body #patient_id').val(patient_id)
+    modal.find('.modal-body #patient_name').val(patient_name)
+    modal.find('.modal-body #patient_surname').val(patient_surname)
+    modal.find('.modal-body #doctor_id').val(doctor_id)
+    modal.find('.modal-body #doctor_name').val(doctor_name)
+    modal.find('.modal-body #doctor_surname').val(doctor_surname)
+    modal.find('.modal-body #date').val(date)
+    modal.find('.modal-body #time').val(time)
+})
+
+/* Delete appointment modal */
+$('#appointmentDeleteModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var id = button.data('id') // Extract info from data-* attributes
+    var patient = button.data('patient_name') + " " + button.data('patient_surname')
+    var doctor = button.data('doctor_name') + " " + button.data('doctor_surname')
+    var date = button.data('date')
+    var time = button.data('time')
+    var modal = $(this)
+    modal.find('.modal-body #id').val(id)
+    modal.find('#modal-message').text('¿Está seguro que desea eliminar la cita?')
+    modal.find('#modal-doctor').text('Doctor: ' + doctor)
+    modal.find('#modal-patient').text('Paciente: ' + patient)
+    modal.find('#modal-date').text('Fecha: ' + date)
+    modal.find('#modal-time').text('Hora: ' + time)
+})

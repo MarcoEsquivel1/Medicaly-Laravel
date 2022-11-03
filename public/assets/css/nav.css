@@ -244,3 +244,13 @@ body
     color: #fff;
     font-size: 1.25em;
 }
+
+#btn-link{
+    background: #3bb9e7;
+    color: #fff;
+}
+
+#btn-link:hover{
+    background: #ff4d89;
+    color: #fff;
+}

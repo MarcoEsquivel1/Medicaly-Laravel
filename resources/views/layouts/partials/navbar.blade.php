@@ -24,10 +24,10 @@
         <span class="title">Pacientes</span>
       </a>
     </li>
-    <li class='list @if(Request::is('citas')) active @endif'>
+    <li class='list @if(Request::is('appointment')) active @endif'>
       <b></b>
       <b></b>
-      <a href="">
+      <a href="/appointment">
         <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
         <span class="title">Citas</span>
       </a>
