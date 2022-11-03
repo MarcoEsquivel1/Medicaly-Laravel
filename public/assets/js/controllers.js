@@ -52,3 +52,34 @@ $('#patientDeleteModal').on('show.bs.modal', function (event) {
     modal.find('.modal-body #id').val(id)
     modal.find('#modal-message').text('¿Está seguro que desea eliminar el paciente ' + name + ' ' + surname + '?')
 })
+
+/* Edit doctor modal */
+$('#doctorEditModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var id = button.data('id') // Extract info from data-* attributes
+    var name = button.data('name')
+    var surname = button.data('surname')
+    var speciality_id = button.data('speciality_id')
+    var speciality_name = button.data('speciality_name')
+    var start_time = button.data('start_time')
+    var end_time = button.data('end_time')
+    var modal = $(this)
+    modal.find('.modal-body #id').val(id)
+    modal.find('.modal-body #name').val(name)
+    modal.find('.modal-body #surname').val(surname)
+    modal.find('.modal-body #speciality_id').val(speciality_id)
+    modal.find('.modal-body #speciality_name').val(speciality_name)
+    modal.find('.modal-body #start_time').val(start_time)
+    modal.find('.modal-body #end_time').val(end_time)
+})
+
+/* Delete doctor modal */
+$('#doctorDeleteModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var id = button.data('id') // Extract info from data-* attributes
+    var name = button.data('name')
+    var surname = button.data('surname')
+    var modal = $(this)
+    modal.find('.modal-body #id').val(id)
+    modal.find('#modal-message').text('¿Está seguro que desea eliminar el doctor ' + name + ' ' + surname + '?')
+})

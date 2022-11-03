@@ -8,10 +8,10 @@
         <span class="title">Home</span>
       </a>
     </li>
-    <li class='list @if(Request::is('medicos')) active @endif'>
+    <li class='list @if(Request::is('doctor')) active @endif'>
       <b></b>
       <b></b>
-      <a href="">
+      <a href="/doctor">
         <span class="icon"><ion-icon name="medical-outline"></ion-icon></span>
         <span class="title">Medicos</span>
       </a>
