@@ -24,34 +24,8 @@
   @include('layouts.partials.navbar')
   @endauth
   @yield('content')
-  <script>
-    let menuToggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    menuToggle.onclick = function () {
-      menuToggle.classList.toggle('active');
-      navigation.classList.toggle('active');
-    }
-  </script>
-  <script>
-    $('#specialityEditModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var id = button.data('id') // Extract info from data-* attributes
-        var name = button.data('name')
-        var modal = $(this)
-        modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #specialityName').val(name)
-    })
-  </script>
-  <script>
-    $('#specialityDeleteModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var id = button.data('id') // Extract info from data-* attributes
-        var name = button.data('name')
-        var modal = $(this)
-        modal.find('.modal-body #id').val(id)
-        modal.find('#modal-message').text('¿Está seguro que desea eliminar la especialidad ' + name + '?')
-    })
-  </script>
+  
+  <script src="{{url('assets/js/controllers.js')}}"></script>
 </body>
 
 </html>

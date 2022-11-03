@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SpecialityController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,11 @@ Route::post('/speciality', [SpecialityController::class, 'store']);
 Route::put('/speciality', [SpecialityController::class, 'edit']);
 
 Route::delete('/speciality', [SpecialityController::class, 'destroy']);
+
+Route::get('/patient', [PatientController::class, 'index']);
+
+Route::post('/patient', [PatientController::class, 'store']);
+
+Route::put('/patient', [PatientController::class, 'edit']);
+
+Route::delete('/patient', [PatientController::class, 'destroy']);

@@ -27,11 +27,12 @@ class SpecialityController extends Controller
     public function edit(Request $request){
         //validate name with error message
         $request->validate([
-            'specialityName' => 'required|string|max:35',
+            'specialityName' => 'required|string|max:35|unique:specialities,specialityName',
         ], [
             'specialityName.required' => 'El campo especialidad es obligatorio.',
             'specialityName.string' => 'El campo especialidad debe ser una cadena de texto.',
             'specialityName.max' => 'El campo especialidad debe tener un máximo de 20 caracteres.',
+            'specialityName.unique' => 'El nombre de la especialidad ya existe.',
         ]);
         //update name
         $speciality = Speciality::find($request->id);

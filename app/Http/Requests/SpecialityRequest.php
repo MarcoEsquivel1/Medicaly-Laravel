@@ -25,7 +25,7 @@ class SpecialityRequest extends FormRequest
     {
         return [
             //
-            'specialityName' => 'required|string|max:35',
+            'specialityName' => 'required|string|max:35|unique:specialities,specialityName',
         ];
     }
 
@@ -40,6 +40,7 @@ class SpecialityRequest extends FormRequest
             'specialityName.required' => 'El campo especialidad es obligatorio.',
             'specialityName.string' => 'El campo especialidad debe ser una cadena de texto.',
             'specialityName.max' => 'El campo especialidad debe tener un máximo de 35 caracteres.',
+            'specialityName.unique' => 'El nombre de la especialidad ya existe.',
         ];
     }
 }

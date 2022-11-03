@@ -16,10 +16,10 @@
         <span class="title">Medicos</span>
       </a>
     </li>
-    <li class='list @if(Request::is('pacientes')) active @endif'>
+    <li class='list @if(Request::is('patient')) active @endif'>
       <b></b>
       <b></b>
-      <a href="">
+      <a href="/patient">
         <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
         <span class="title">Pacientes</span>
       </a>
