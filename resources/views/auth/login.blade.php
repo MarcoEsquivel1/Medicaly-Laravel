@@ -23,6 +23,9 @@
               <input type="password" class="form-control" style="background-color: #76c7e5; color: white" name="password" id="password" placeholder="#" required>
                 <label for="password" style="color: white; font-style: italic;">Contraseña</label>
             </div>
+            <div class="d-flex justify-content-center">
+              <a href="/register" class="text-decoration-none" style="color: #76c7e5">¿No tienes cuenta? Registrate</a>
+            </div>
             <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Iniciar Sesión" name="submit">
           </form>
         </div>

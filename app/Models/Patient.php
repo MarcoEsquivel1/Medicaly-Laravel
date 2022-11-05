@@ -8,19 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'surname', 'phone', 'dni'];
+    protected $fillable = [
+        'doctor_id',
+        'name',
+        'phone',
+        'dni',
+        'birthday',
+    ];
 
     public function appointments()
     {
         return $this->hasMany(Appointment::class);
-    }
+    }   
 
-    //scope name or surname
-    public function scopeNameOrSurname($query, $nameOrSurname)
+    public function doctor()
     {
-        if ($nameOrSurname) {
-            return $query->where('name', 'like', '%' . $nameOrSurname . '%')
-                ->orWhere('surname', 'like', '%' . $nameOrSurname . '%');
-        }
+        return $this->belongsTo(Doctor::class);
     }
 }

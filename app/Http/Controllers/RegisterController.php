@@ -20,6 +20,11 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request)
     {
         $user = User::create($request->validated());
+        //create doctor 
+        $user->doctor()->create([
+            'name' => 'null',
+            'user_id' => $user->id,
+        ]);
         return redirect('/login')->with('success', 'Cuenta creada correctamente, Por favor inicia sesión.');
     }
 }

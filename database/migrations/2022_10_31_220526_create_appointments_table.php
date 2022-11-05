@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->date('date');
             $table->time('time');
+            $table->text('comment')->nullable();
+            $table->boolean('done')->default(false);
             $table->timestamps();
         });
     }

@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('doctor_id')->constrained()->references('id')->on('doctors')->onDelete('cascade');
             $table->string('name');
-            $table->string('surname');
             $table->string('phone')->nullable();
-            $table->string('dni')->nullable()->unique();
+            $table->string('dni')->nullable();
+            $table->date('birthday')->nullable();
             $table->timestamps();
         });
     }

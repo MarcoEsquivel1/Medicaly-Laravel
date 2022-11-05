@@ -13,30 +13,16 @@
         <a id="btn-link" href="/doctor" class="btn btn-lg btn-block w-100 align-items-center justify-content-center" style="height: 200px">
           <div class="row h-50">
             <div class="col-12 align-self-center text-center">
-              <ion-icon name="medical-outline" style="font-size: 4.5rem;"></ion-icon>
+              <ion-icon name="medkit-outline" style="font-size: 4.5rem;"></ion-icon>
             </div>
           </div>
           <div class="row h-50">
             <div class="col-12 align-self-center text-center">
-              <h1>Doctores</h1>
+              <h1>Perfil</h1>
             </div>
           </div>
         </a>
-      </div>
-      <div class="col-12 col-md-6 py-2">
-        <a id="btn-link" href="/speciality" class="btn btn-lg btn-block w-100 align-items-center justify-content-center" style="height: 200px">
-          <div class="row h-50">
-            <div class="col-12 align-self-center text-center">
-              <ion-icon name="ribbon-outline" style="font-size: 4.5rem;"></ion-icon>
-            </div>
-          </div>
-          <div class="row h-50">
-            <div class="col-12 align-self-center text-center">
-              <h1>Especialidades</h1>
-            </div>
-          </div>
-        </a>
-      </div>    
+      </div> 
       <div class="col-12 col-md-6 py-2">
         <a id="btn-link" href="/patient" class="btn btn-lg btn-block w-100 align-items-center justify-content-center" style="height: 200px">
           <div class="row h-50">
@@ -61,6 +47,20 @@
           <div class="row h-50">
             <div class="col-12 align-self-center text-center">
               <h1>Citas</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 py-2">
+        <a id="btn-link-2" href="/logout" class="btn btn-lg btn-block w-100 align-items-center justify-content-center" style="height: 200px">
+          <div class="row h-50">
+            <div class="col-12 align-self-center text-center">
+              <ion-icon name="log-out-outline" style="font-size: 4.5rem;"></ion-icon>
+            </div>
+          </div>
+          <div class="row h-50">
+            <div class="col-12 align-self-center text-center">
+              <h1>Cerrar Sesión</h1>
             </div>
           </div>
         </a>

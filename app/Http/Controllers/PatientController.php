@@ -14,13 +14,25 @@ class PatientController extends Controller
         if (!auth()->check()) {
             return redirect('/login');
         }
-        $patients = Patient::all()->sortBy('id');
+
+        //get my patients
+        $patients = auth()->user()->doctor->patients->sortBy('name');
+        //return view with patients
         return view('patient.index', ['patients' => $patients]);
     }
 
     public function store(PatientRequest $request)
     {
-        $patient = Patient::create($request->validated());
+        $request->validated();      
+        $user = auth()->user();
+        $patient = Patient::create([
+            'doctor_id' => $user->id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'dni' => $request->dni,
+            'birthday' => $request->birthday,
+        ]);
         return redirect('/patient')->with('success', 'Paciente creado correctamente.');
     }
 
@@ -28,26 +40,21 @@ class PatientController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:75',
-            'surname' => 'required|string|max:75',
             'phone' => 'string|max:9',
             'dni' => 'required|string|max:8|unique:patients,dni,' . $request->id,
+            'birthday' => 'date',           
         ], [
             'name.required' => 'El nombre es obligatorio',
             'name.max' => 'El nombre debe tener máximo 75 caracteres',
-            'surname.required' => 'El apellido es obligatorio',
-            'surname.max' => 'El apellido debe tener máximo 75 caracteres',
             'phone.max' => 'El teléfono debe tener máximo 9 caracteres',
             'phone.string' => 'El teléfono debe tener el formato correcto',
             'dni.max' => 'El DNI debe tener máximo 25 caracteres',
             'dni.unique' => 'El DNI ya existe',
+            'birthday.date' => 'La fecha de nacimiento debe tener el formato correcto',
         ]);
 
-        $patient = Patient::find($request->id);
-        $patient->name = $request->name;
-        $patient->surname = $request->surname;
-        $patient->phone = $request->phone;
-        $patient->dni = $request->dni;
-        $patient->save();
+        //update patient
+        Patient::find($request->id)->update($request->all());
         return redirect('/patient')->with('success', 'Paciente actualizado correctamente.');
     }
 
