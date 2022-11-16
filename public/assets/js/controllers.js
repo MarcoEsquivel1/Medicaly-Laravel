@@ -29,7 +29,7 @@ $('#patientDeleteModal').on('show.bs.modal', function (event) {
     var name = button.data('name')
     var modal = $(this)
     modal.find('.modal-body #id').val(id)
-    modal.find('#modal-message').text('¿Está seguro que desea eliminar el paciente ' + name + '?')
+    modal.find('#modal-message').text('¿Está seguro que desea eliminar el paciente ' + name + ', tambien se eliminaran su citas?')
 })
 
 /* Edit appointment modal */

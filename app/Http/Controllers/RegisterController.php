@@ -22,7 +22,7 @@ class RegisterController extends Controller
         $user = User::create($request->validated());
         //create doctor 
         $user->doctor()->create([
-            'name' => 'null',
+            'name' => 'Dr',
             'user_id' => $user->id,
         ]);
         return redirect('/login')->with('success', 'Cuenta creada correctamente, Por favor inicia sesión.');

@@ -28,7 +28,7 @@ class PatientRequest extends FormRequest
             'name' => 'required|string|max:75',
             'dni' => 'required|string|max:8',
             'phone' => 'string|max:9',
-            'birthdate' => 'date',
+            'birthday' => 'date',
         ];
     }
 
@@ -48,7 +48,7 @@ class PatientRequest extends FormRequest
             'dni.max' => 'El campo dni debe tener un máximo de 8 caracteres.',
             'phone.string' => 'El campo teléfono debe ser un texto.',
             'phone.max' => 'El campo teléfono debe tener un máximo de 9 caracteres.',
-            'birthdate.date' => 'El campo fecha de nacimiento debe ser una fecha.',
+            'birthday.date' => 'El campo fecha de nacimiento debe ser una fecha.',
         ];
     }
 }

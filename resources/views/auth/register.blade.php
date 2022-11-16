@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col-12 pb-3" >
               <h2 class="display-5 text-center my-3">Registrar Usuario</h2>
-              <img src='{{ URL::to('/') }}/images/dentista.png' class="img-fluid mx-auto d-block" width="150px" alt="logo">
+              <img src='{{ URL::to('/') }}/images/saludlogo.png' class="img-fluid mx-auto d-block" width="150px" alt="logo">
             </div>
             <form action="/register" method="POST">
               @csrf
