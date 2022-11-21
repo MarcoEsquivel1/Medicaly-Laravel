@@ -28,7 +28,7 @@
                             <button type="button" id="btn-create" class="btn mx-1" data-bs-toggle="modal" data-bs-target="#appointmentEditModal" data-id="{{ $appointment->id }}" data-patient_id="{{ $appointment->patient->id }}" data-patient_name="{{ $appointment->patient->name }}" data-date="{{ $appointment->date }}" data-time="{{ $appointment->time }}" data-comment="{{ $appointment->comment }}">
                                 <ion-icon name="create-outline"></ion-icon>
                             </button>
-                            <button type="button" id="btn-delete" class="btn mx-1" data-bs-toggle="modal" data-bs-target="#appointmentDeleteModal" data-id="{{ $appointment->id }}" data-patient_name="{{ $appointment->patient->name }}"  data-date="{{ $appointment->date }}" data-time="{{ $appointment->time }} data-comment="{{ $appointment->comment }}">
+                            <button type="button" id="btn-delete" class="btn mx-1" data-bs-toggle="modal" data-bs-target="#appointmentDeleteModal" data-id="{{ $appointment->id }}" data-patient_name="{{ $appointment->patient->name }}"  data-date="{{ $appointment->date }}" data-time="{{ $appointment->time }}" data-comment="{{ $appointment->comment }}">
                                 <ion-icon name="trash-outline"></ion-icon>
                             </button>
                             <form action="" method="POST">

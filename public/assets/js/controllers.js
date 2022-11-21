@@ -58,6 +58,7 @@ $('#appointmentDeleteModal').on('show.bs.modal', function (event) {
     var doctor = button.data('doctor_name') + " " + button.data('doctor_surname')
     var date = button.data('date')
     var time = button.data('time')
+    var comment = button.data('comment')
     var modal = $(this)
     modal.find('.modal-body #id').val(id)
     modal.find('#modal-message').text('¿Está seguro que desea eliminar la cita?')
@@ -65,4 +66,34 @@ $('#appointmentDeleteModal').on('show.bs.modal', function (event) {
     modal.find('#modal-patient').text('Paciente: ' + patient)
     modal.find('#modal-date').text('Fecha: ' + date)
     modal.find('#modal-time').text('Hora: ' + time)
+    modal.find('#modal-comment').text('Comentario: ' + comment)
+    console.log(time)
+})
+
+// prevent close modal when click outside
+$('#appointmentModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+$('#appointmentEditModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+$('#appointmentDeleteModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+
+// prevent close modal when click outside
+$('#patientModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+$('#patientEditModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+$('#patientDeleteModal').modal({
+    backdrop: 'static',
+    keyboard: false
 })
