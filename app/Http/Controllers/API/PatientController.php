@@ -14,7 +14,7 @@ class PatientController extends Controller
         //validate if request has bearer token and token exists in database
         if ($request->bearerToken() && $request->user()) {
             //get my patients
-            $patients = $request->user()->doctor->patients->sortBy('name');
+            $patients = $request->user()->doctor->patients->sortBy('id');
             //return view with patients
             return response()->json([
                 'message' => 'Pacientes obtenidos correctamente.',
@@ -47,7 +47,7 @@ class PatientController extends Controller
             //if success validation create patient
             $patient = $request->user()->doctor->patients()->create($validated);
             //get my patients and return with patients
-            $patients = $request->user()->doctor->patients->sortBy('name');
+            $patients = $request->user()->doctor->patients->sortBy('id');
             return response()->json([
                 'message' => 'Paciente creado correctamente.',
                 'status' => 200,
@@ -115,7 +115,7 @@ class PatientController extends Controller
             $patient = $request->user()->doctor->patients()->find($request->id);
             $patient->update($validated);
             //get my patients and return with patients
-            $patients = $request->user()->doctor->patients->sortBy('name');
+            $patients = $request->user()->doctor->patients->sortBy('id');
             return response()->json([
                 'message' => 'Paciente actualizado correctamente.',
                 'status' => 200,
@@ -158,7 +158,7 @@ class PatientController extends Controller
             $patient = $request->user()->doctor->patients()->find($request->id);
             $patient->delete();
             //get my patients and return with patients
-            $patients = $request->user()->doctor->patients->sortBy('name');
+            $patients = $request->user()->doctor->patients->sortBy('id');
             return response()->json([
                 'message' => 'Paciente eliminado correctamente.',
                 'status' => 200,
