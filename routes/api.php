@@ -6,6 +6,7 @@ use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\LogoutController;
 use App\Http\Controllers\API\DoctorController;
 use App\Http\Controllers\API\PatientController;
+use App\Http\Controllers\API\AppointmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,11 @@ Route::post('/patients', [PatientController::class, 'store'])->middleware('auth:
 Route::put('/patients', [PatientController::class, 'edit'])->middleware('auth:sanctum');
 
 Route::delete('/patients', [PatientController::class, 'destroy'])->middleware('auth:sanctum');
+
+Route::get('/appointments', [AppointmentController::class, 'index'])->middleware('auth:sanctum');
+
+Route::post('/appointments', [AppointmentController::class, 'store'])->middleware('auth:sanctum');
+
+Route::put('/appointments', [AppointmentController::class, 'edit'])->middleware('auth:sanctum');
+
+Route::delete('/appointments', [AppointmentController::class, 'destroy'])->middleware('auth:sanctum');
