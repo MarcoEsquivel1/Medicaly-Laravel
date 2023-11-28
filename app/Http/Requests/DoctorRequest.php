@@ -25,11 +25,9 @@ class DoctorRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|string|max:75',
-            'surname' => 'required|string|max:75',
-            'speciality_id' => 'required|integer|exists:specialities,id',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|after:start_time',
+            'name' => 'max:200',
+            'start_time' => 'date_format:H:i',
+            'end_time' => 'date_format:H:i|after:start_time',
         ];
     }
 
@@ -41,20 +39,11 @@ class DoctorRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'El nombre es requerido', 
-            'name.string' => 'El nombre debe ser una cadena de texto',
-            'name.max' => 'El nombre debe tener como máximo 75 caracteres',
-            'surname.required' => 'El apellido es requerido',
-            'surname.string' => 'El apellido debe ser una cadena de texto',
-            'surname.max' => 'El apellido debe tener como máximo 75 caracteres',
-            'speciality_id.required' => 'La especialidad es requerida',
-            'speciality_id.integer' => 'La especialidad debe ser un número entero',
-            'speciality_id.exists' => 'La especialidad no existe',
-            'start_time.required' => 'La hora de entrada es requerida',
-            'start_time.date_format' => 'La hora de entrada debe tener el formato HH:mm',
-            'end_time.required' => 'La hora de salida es requerida',
-            'end_time.date_format' => 'La hora de salida debe tener el formato HH:mm',
-            'end_time.after' => 'La hora de salida debe ser mayor a la hora de entrada',
+            'name.max' => 'El campo nombre debe tener un máximo de 200 caracteres.',
+            'start_time.date_format' => 'El campo hora de inicio debe tener el formato HH:MM.',
+            'end_time.date_format' => 'El campo hora de fin debe tener el formato HH:MM.',
+            'end_time.after' => 'El campo hora de fin debe ser mayor al campo hora de inicio.',
         ];
     }
+
 }

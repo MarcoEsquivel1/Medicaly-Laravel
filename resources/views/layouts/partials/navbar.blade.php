@@ -12,7 +12,7 @@
       <b></b>
       <b></b>
       <a href="/doctor">
-        <span class="icon"><ion-icon name="medical-outline"></ion-icon></span>
+        <span class="icon"><ion-icon name="medkit-outline"></ion-icon></span>
         <span class="title">Medicos</span>
       </a>
     </li>
@@ -30,14 +30,6 @@
       <a href="/appointment">
         <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
         <span class="title">Citas</span>
-      </a>
-    </li>
-    <li class='list @if(Request::is('speciality')) active @endif'>
-      <b></b>
-      <b></b>
-      <a href="/speciality">
-        <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
-        <span class="title">Especialidades</span>
       </a>
     </li>
     <li class="list">

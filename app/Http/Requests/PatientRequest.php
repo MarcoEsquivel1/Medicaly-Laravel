@@ -26,23 +26,29 @@ class PatientRequest extends FormRequest
         return [
             //
             'name' => 'required|string|max:75',
-            'surname' => 'required|string|max:75',
+            'dni' => 'required|string|max:8',
             'phone' => 'string|max:9',
-            'dni' => 'string|max:25|unique:patients,dni',
+            'birthday' => 'date',
         ];
     }
 
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
     public function messages()
     {
         return [
-            'name.required' => 'El nombre es obligatorio',
-            'name.max' => 'El nombre debe tener máximo 75 caracteres',
-            'surname.required' => 'El apellido es obligatorio',
-            'surname.max' => 'El apellido debe tener máximo 75 caracteres',
-            'phone.max' => 'El teléfono debe tener máximo 9 caracteres',
-            'phone.string' => 'El teléfono debe tener el formato correcto',
-            'dni.max' => 'El DNI debe tener máximo 25 caracteres',
-            'dni.unique' => 'El DNI ya existe',
+            'name.required' => 'El campo nombre es obligatorio.',
+            'name.string' => 'El campo nombre debe ser un texto.',
+            'name.max' => 'El campo nombre debe tener un máximo de 75 caracteres.',
+            'dni.required' => 'El campo dni es obligatorio.',
+            'dni.string' => 'El campo dni debe ser un texto.',
+            'dni.max' => 'El campo dni debe tener un máximo de 8 caracteres.',
+            'phone.string' => 'El campo teléfono debe ser un texto.',
+            'phone.max' => 'El campo teléfono debe tener un máximo de 9 caracteres.',
+            'birthday.date' => 'El campo fecha de nacimiento debe ser una fecha.',
         ];
     }
 }

@@ -254,3 +254,13 @@ body
     background: #ff4d89;
     color: #fff;
 }
+
+#btn-link-2{
+    background: #ff4d89;
+    color: #fff;
+}
+
+#btn-link-2:hover{
+    background: #3bb9e7;
+    color: #fff;
+}

@@ -4,7 +4,6 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\AppointmentController;
@@ -37,14 +36,6 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/speciality', [SpecialityController::class, 'index']);
-
-Route::post('/speciality', [SpecialityController::class, 'store']);
-
-Route::put('/speciality', [SpecialityController::class, 'edit']);
-
-Route::delete('/speciality', [SpecialityController::class, 'destroy']);
-
 Route::get('/patient', [PatientController::class, 'index']);
 
 Route::post('/patient', [PatientController::class, 'store']);
@@ -55,11 +46,7 @@ Route::delete('/patient', [PatientController::class, 'destroy']);
 
 Route::get('/doctor', [DoctorController::class, 'index']);
 
-Route::post('/doctor', [DoctorController::class, 'store']);
-
 Route::put('/doctor', [DoctorController::class, 'edit']);
-
-Route::delete('/doctor', [DoctorController::class, 'destroy']);
 
 Route::get('/appointment', [AppointmentController::class, 'index']);
 

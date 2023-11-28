@@ -1,4 +1,4 @@
-<div class="modal fade" id="appointmentEditModal" tabindex="-1" aria-labelledby="appointmentEditModalLabel" aria-hidden="true">
+<div class="modal fade" id="appointmentEditModal" tabindex="-1" aria-labelledby="appointmentEditModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header px-4 py-3">
@@ -10,17 +10,9 @@
                     @csrf @method('PUT')
                     <input type="hidden" name="id" id="id">
                     <div class="form-floating my-4">
-                        <select class="form-select" style="background-color: #76c7e5; color: white" name="doctor_id" id="doctor_id" required>
-                            @foreach ($doctors as $doctor)
-                                <option value="{{ $doctor->id }}">{{ $doctor->name }} {{ $doctor->surname }}</option>
-                            @endforeach
-                        </select>
-                        <label for="doctor_id" style="color: white; font-style: italic;">Doctor</label>
-                    </div>
-                    <div class="form-floating my-4">
                         <select class="form-select" style="background-color: #76c7e5; color: white" name="patient_id" id="patient_id" required>                        
                             @foreach ($patients as $patient)
-                                <option value="{{ $patient->id }}">{{ $patient->name }} {{ $patient->surname }}</option>
+                                <option value="{{ $patient->id }}">{{ $patient->name }}</option>
                             @endforeach
                         </select>
                         <label for="patient_id" style="color: white; font-style: italic;">Paciente</label>
@@ -32,6 +24,10 @@
                     <div class="form-floating my-4">
                         <input type="time" class="form-control" style="background-color: #76c7e5; color: white"  name="time" id="time" placeholder="#" value="" required>
                         <label for="time" style="color: white; font-style: italic;">Hora</label>
+                    </div>
+                    <div class="form-floating my-4">
+                        <textarea class="form-control" style="background-color: #76c7e5; color: white"  name="comment" id="comment" placeholder="#"></textarea>
+                        <label for="comment" style="color: white; font-style: italic;">Comentario</label>
                     </div>
                     <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Editar" name="submit">
                     <button type="button" class="btn" style="background: #ff4d89; color: #fff" data-bs-dismiss="modal">Cancelar</button>

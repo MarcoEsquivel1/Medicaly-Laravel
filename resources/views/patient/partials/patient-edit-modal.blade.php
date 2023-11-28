@@ -1,4 +1,4 @@
-<div class="modal fade" id="patientEditModal" tabindex="-1" aria-labelledby="patientEditModalLabel" aria-hidden="true">
+<div class="modal fade" id="patientEditModal" tabindex="-1" aria-labelledby="patientEditModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header px-4 py-3">
@@ -14,16 +14,16 @@
                         <label for="name" style="color: white; font-style: italic;">Nombre de paciente</label>
                     </div>
                     <div class="form-floating my-4">
-                        <input type="text" class="form-control" style="background-color: #76c7e5; color: white"  name="surname" id="surname" value="" placeholder="#" required>
-                        <label for="surname" style="color: white; font-style: italic;">Apellido de paciente</label>
-                    </div>
-                    <div class="form-floating my-4">
                         <input type="text" class="form-control" style="background-color: #76c7e5; color: white"  name="dni" id="dni" value="" placeholder="#" required>
                         <label for="dni" style="color: white; font-style: italic;">DNI de paciente</label>
                     </div>
                     <div class="form-floating my-4">
                         <input type="text" class="form-control" style="background-color: #76c7e5; color: white"  name="phone" id="phone" value="" placeholder="#" required>
                         <label for="phone" style="color: white; font-style: italic;">Teléfono de paciente</label>
+                    </div>
+                    <div class="form-floating my-4">
+                        <input type="date" class="form-control" style="background-color: #76c7e5; color: white"  name="birthday" id="birthday" value="" placeholder="#" required>
+                        <label for="birthday" style="color: white; font-style: italic;">Fecha de nacimiento de paciente</label>
                     </div>
                     <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Editar" name="submit">
                     <button type="button" class="btn" style="background: #ff4d89; color: #fff" data-bs-dismiss="modal">Cancelar</button>

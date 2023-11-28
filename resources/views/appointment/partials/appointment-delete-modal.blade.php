@@ -1,4 +1,4 @@
-<div class="modal fade" id="appointmentDeleteModal" tabindex="-1" aria-labelledby="appointmentDeleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="appointmentDeleteModal" tabindex="-1" aria-labelledby="appointmentDeleteModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header px-4 py-3">
@@ -14,6 +14,7 @@
                     <p id="modal-patient">mensaje</p>
                     <p id="modal-date">mensaje</p>
                     <p id="modal-time">mensaje</p>
+                    <p id="modal-comment">mensaje</p>
                     <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Eliminar" name="submit">
                     <button type="button" class="btn" style="background: #ff4d89; color: #fff" data-bs-dismiss="modal">Cancelar</button>
                 </form>

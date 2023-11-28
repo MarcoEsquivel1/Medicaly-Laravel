@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col-12 pb-3" >
               <h2 class="display-5 text-center my-3">Registrar Usuario</h2>
-              <img src='{{ URL::to('/') }}/images/dentista.png' class="img-fluid mx-auto d-block" width="150px" alt="logo">
+              <img src='{{ URL::to('/') }}/images/saludlogo.png' class="img-fluid mx-auto d-block" width="150px" alt="logo">
             </div>
             <form action="/register" method="POST">
               @csrf
@@ -30,6 +30,9 @@
               <div class="form-floating  my-4">
                 <input type="password" class="form-control" style="background-color: #76c7e5; color: white" name="password_confirmation" id="password_confirmation" placeholder="#" required>
                   <label for="password_confirmation" style="color: white; font-style: italic;">Confirmar Contraseña</label>
+              </div>
+              <div class="d-flex justify-content-center">
+                <a href="/login" class="text-decoration-none" style="color: #76c7e5">¿Ya tienes cuenta? Inicia Sesión</a>
               </div>
               <input type="submit" class="btn" style="background: #76c7e5; color: #fff" value="Registrarse" name="submit">
             </form>
