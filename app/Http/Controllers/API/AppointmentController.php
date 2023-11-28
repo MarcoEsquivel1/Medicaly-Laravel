@@ -15,7 +15,7 @@ class AppointmentController extends Controller
         //validate if request has bearer token and token exists in database
         if ($request->bearerToken() && $request->user()) {
             //get my appointments
-            $appointments = $request->user()->doctor->appointments->sortBy('id');
+            $appointments = $request->user()->doctor->appointments->sortBy('date')->values()->all();
             //format time
             foreach ($appointments as $appointment) {
                 $appointment->time = date('H:i', strtotime($appointment->time));
@@ -52,7 +52,7 @@ class AppointmentController extends Controller
             //if success validation create appointment
             $appointment = $request->user()->doctor->appointments()->create($validated);
             //get my appointments and return with appointments
-            $appointments = $request->user()->doctor->appointments->sortBy('id');
+            $appointments = $request->user()->doctor->appointments->sortBy('date')->values()->all();
             //format time
             foreach ($appointments as $appointment) {
                 $appointment->time = date('H:i', strtotime($appointment->time));
@@ -124,7 +124,7 @@ class AppointmentController extends Controller
             $appointment = $request->user()->doctor->appointments()->find($request->id);
             $appointment->update($validated);
 
-            $appointments = $request->user()->doctor->appointments->sortBy('id');
+            $appointments = $request->user()->doctor->appointments->sortBy('date')->values()->all();
             //format time
             foreach ($appointments as $appointment) {
                 $appointment->time = date('H:i', strtotime($appointment->time));
@@ -167,7 +167,7 @@ class AppointmentController extends Controller
             $appointment = $request->user()->doctor->appointments()->find($request->id);
             $appointment->delete();
 
-            $appointments = $request->user()->doctor->appointments->sortBy('id');
+            $appointments = $request->user()->doctor->appointments->sortBy('date')->values()->all();
             //format time
             foreach ($appointments as $appointment) {
                 $appointment->time = date('H:i', strtotime($appointment->time));
