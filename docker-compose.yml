@@ -34,6 +34,12 @@ services:
             MYSQL_USER: '${DB_USERNAME}'
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            # Add the following line to allow external connections
+            MYSQL_BIND_ADDRESS: '0.0.0.0'
+        command: [
+            '--sql-mode=NO_ENGINE_SUBSTITUTION',
+            '--bind-address=0.0.0.0',  # Add this line to allow external connections
+        ]
         volumes:
             - 'sail-mysql:/var/lib/mysql'
             - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
@@ -46,7 +52,7 @@ services:
                 - ping
                 - '-p${DB_PASSWORD}'
             retries: 3
-            timeout: 5s
+            timeout: 35s
 networks:
     sail:
         driver: bridge
