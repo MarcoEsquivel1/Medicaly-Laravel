@@ -13,10 +13,25 @@
 
 # Descargar proyecto
 1. Clonar proyecto
-2. ```composer install```
-3. ```npm install```
+2.
+```
+composer install
+```
+3.
+```
+npm install
+```
 4. Crear el archivo .env
-5. ```php artisan key:generate```
-6. ```./vendor/bin/sail up -d```
-7. ```php artisan up``
+5.
+```
+php artisan key:generate
+```
+6.
+```
+./vendor/bin/sail up -d
+```
+7.
+```
+php artisan up
+```
 8. Mas info <a href="https://laravel.com/docs/10.x/sail>https://laravel.com/docs/10.x/sail</a>
