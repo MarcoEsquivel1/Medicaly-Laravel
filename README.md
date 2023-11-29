@@ -13,25 +13,29 @@
 
 # Descargar proyecto
 1. Clonar proyecto
-2.
+2. Instalar dependencias Laravel
 ```
 composer install
 ```
-3.
+3. Instalar dependencias de package.json
 ```
 npm install
 ```
+
 4. Crear el archivo .env
 5.
 ```
 php artisan key:generate
 ```
-6.
+
+6. Levantar docker
 ```
 ./vendor/bin/sail up -d
 ```
-7.
+
+7. Levantar servicio
 ```
 php artisan up
 ```
+
 8. Mas info <a href="https://laravel.com/docs/10.x/sail>https://laravel.com/docs/10.x/sail</a>
